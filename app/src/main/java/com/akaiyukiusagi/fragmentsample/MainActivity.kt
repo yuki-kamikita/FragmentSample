@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.activity_first_fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,18 +12,23 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //FirstFragmentActivityクラスをインスタンス化その下も同様。
+        // FirstFragmentActivityクラスをインスタンス化その下も同様。
         val firstFragment = FirstFragmentActivity()
         val secondFragment = SecondFragmentActivity()
-        //buttonをクリックしたときにreplaceFragmentメソッドを実行
+        val thirdFragment = ThirdFragmentActivity()
+        // buttonをクリックしたときにreplaceFragmentメソッドを実行
         firstButton.setOnClickListener {
             replaceFragment(firstFragment)
         }
         secondButton.setOnClickListener {
             replaceFragment(secondFragment)
         }
+        thirdButton.setOnClickListener {
+            replaceFragment(thirdFragment)
+        }
+
     }
-    //R.id.containerに引数で渡されたフラグメントを入れる。
+    // R.id.containerに引数で渡されたフラグメントを入れる。
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()

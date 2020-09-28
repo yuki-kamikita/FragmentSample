@@ -16,14 +16,20 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="１" />
+            android:text="1st" />
         　　　　　<!--このボタンを押すとactivity_second_fragmentに切り替わる。-->
         <Button
             android:id="@+id/secondButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="２" />
+            android:text="2nd" />
+        <Button
+            android:id="@+id/thirdButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3rd" />
     </LinearLayout>
     <!--ここにフラグメントが入る。-->
     <LinearLayout
