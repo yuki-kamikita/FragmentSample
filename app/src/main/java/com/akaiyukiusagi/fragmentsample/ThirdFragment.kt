@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.akaiyukiusagi.fragmentsample.databinding.ActivitySecondFragmentBinding
 import androidx.databinding.DataBindingUtil
 import com.akaiyukiusagi.fragmentsample.databinding.ActivityThirdFragmentBinding
+import kotlinx.android.synthetic.main.activity_third_fragment.*
 
 class ThirdFragmentActivity : Fragment() {
     private var _binding: ActivityThirdFragmentBinding? = null

@@ -8,6 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_light"
         android:orientation="vertical">
         <!--ただのTextViewです。stringファイルにテキストを設定しておきましょう。-->
         <androidx.appcompat.widget.AppCompatTextView
@@ -16,13 +17,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center|center"
-            android:background="@android:color/holo_blue_light"
             android:text="第二フラグメント" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="go to third fragment" />
     </LinearLayout>
 </layout>

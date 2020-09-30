@@ -1,10 +1,8 @@
 package com.akaiyukiusagi.fragmentsample
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.activity_first_fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,10 +10,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        // FirstFragmentActivityクラスをインスタンス化その下も同様。
+
+        // class FragmentActivity をインスタンス化
         val firstFragment = FirstFragmentActivity()
         val secondFragment = SecondFragmentActivity()
         val thirdFragment = ThirdFragmentActivity()
+
         // buttonをクリックしたときにreplaceFragmentメソッドを実行
         firstButton.setOnClickListener {
             replaceFragment(firstFragment)
@@ -28,11 +28,13 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    // R.id.containerに引数で渡されたフラグメントを入れる。
+
+    // 指定したフラグメントを表示する ActivityからFragment呼び出し
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.container, fragment)
+        fragmentTransaction.addToBackStack(null) // 上に重ねる設定 これを入れると戻るボタンを押すことで戻れるようになる
+        fragmentTransaction.replace(R.id.container, fragment) // R.id.containerの位置に引数で渡されたフラグメントを入れる
         fragmentTransaction.commit()
     }
 }

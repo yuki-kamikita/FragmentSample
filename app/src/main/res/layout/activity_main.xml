@@ -10,14 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <!--このボタンを押すとactivity_first_fragmentに切り替わる。-->
+
+        <!--ボタンを押すとFragmentが切り替わる。-->
         <Button
             android:id="@+id/firstButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="1st" />
-        　　　　　<!--このボタンを押すとactivity_second_fragmentに切り替わる。-->
         <Button
             android:id="@+id/secondButton"
             android:layout_width="0dp"
@@ -31,7 +31,8 @@
             android:layout_weight="1"
             android:text="3rd" />
     </LinearLayout>
-    <!--ここにフラグメントが入る。-->
+
+    <!--ここにフラグメントが入る-->
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
