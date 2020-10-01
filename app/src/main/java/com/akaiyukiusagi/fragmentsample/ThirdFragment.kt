@@ -31,13 +31,12 @@ class ThirdFragmentActivity : Fragment() {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        // addToBackStackで重ねる前のFragmentに戻る
+        // addToBackStackで重ねる前のFragmentに戻る Android標準の戻るボタンと同じだと思う
         button3.setOnClickListener {
             this.fragmentManager?.popBackStack()
         }
 
     }
-
 }
 
 // 出典：https://developer.android.com/topic/libraries/view-binding?hl=ja#activities
