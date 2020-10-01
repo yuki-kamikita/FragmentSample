@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.akaiyukiusagi.fragmentsample.databinding.ActivitySecondFragmentBinding
-import androidx.databinding.DataBindingUtil
 import com.akaiyukiusagi.fragmentsample.databinding.ActivityThirdFragmentBinding
 import kotlinx.android.synthetic.main.activity_third_fragment.*
 
@@ -26,6 +24,20 @@ class ThirdFragmentActivity : Fragment() {
 
         return binding.root
     }
+
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // addToBackStackで重ねる前のFragmentに戻る
+        button3.setOnClickListener {
+            this.fragmentManager?.popBackStack()
+        }
+
+    }
+
 }
 
 // 出典：https://developer.android.com/topic/libraries/view-binding?hl=ja#activities
